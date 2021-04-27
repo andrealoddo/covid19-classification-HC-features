@@ -18,3 +18,27 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
     %features = [features; featureExtraction(img, descriptor, color, graylevel, prepro)'];
     
 %end
+
+
+%Concateno gli array di features orizzontamente poichè trovo più immediato l'accesso
+%----------%
+color = 'gray';
+graylevel = 256;
+prepro = 'none';
+
+%Processo per il Local binary pattern
+descriptor = 'LBP18'; 
+imgArray=imageDatastore('../dataset_subset/','IncludeSubFolders',true','LabelSource','foldernames');
+
+featuresLBP18=[];
+while hasdata(imgArray)
+    featuresLBP18=cat(2,featuresLBP18,featureExtraction(read(imgArray), descriptor, color, graylevel, prepro));
+end
+%Processo per il HAR
+descriptor = 'HAR'; 
+imgArray=imageDatastore('../dataset_subset/','IncludeSubFolders',true','LabelSource','foldernames');
+featuresHAR=[];
+while hasdata(imgArray)
+    featuresHAR=cat(2,featuresHAR,featureExtraction(read(imgArray), descriptor, color, graylevel, prepro));
+end
+
