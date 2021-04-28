@@ -20,25 +20,19 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 %end
 
 
-%Concateno gli array di features orizzontamente poichè trovo più immediato l'accesso
-%----------%
-color = 'gray';
-graylevel = 256;
-prepro = 'none';
-
-%Processo per il Local binary pattern
-descriptor = 'LBP18'; 
-imgArray=imageDatastore('../dataset_subset/','IncludeSubFolders',true','LabelSource','foldernames');
-
-featuresLBP18=[];
-while hasdata(imgArray)
-    featuresLBP18=cat(2,featuresLBP18,featureExtraction(read(imgArray), descriptor, color, graylevel, prepro));
-end
-%Processo per il HAR
-descriptor = 'HAR'; 
-imgArray=imageDatastore('../dataset_subset/','IncludeSubFolders',true','LabelSource','foldernames');
-featuresHAR=[];
-while hasdata(imgArray)
-    featuresHAR=cat(2,featuresHAR,featureExtraction(read(imgArray), descriptor, color, graylevel, prepro));
-end
+%preparo il dataset per il training
+[trainHAR,validateHAR]=extractFeaturesAndSplit('HAR',0.8);
+[trainLBP18,validateLBP18]=extractFeaturesAndSplit('LBP18',0.8);
+%eseguo il predict tramite il modello 
+%essendo il dataset ancora di piccole dimensioni i risultati possono essere
+%falsati, aumentando il fold è possibile ottenere risultati più concreti
+%prima di eseguire questa porzione è necessario avere un modello già
+%allenato
+predictions = trainedModel.predictFcn(validateHAR);
+predictions1 = trainedModel1.predictFcn(validateHAR);
+%calcolo l'accuratezza
+iscorrect=predictions1==validateHAR.labels;
+iscorrect=iscorrect(:,1);
+sizeArray=size(validateHAR);
+accuracy=sum(iscorrect)*100/sizeArray(1);
 
