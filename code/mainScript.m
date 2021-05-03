@@ -23,16 +23,20 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 %preparo il dataset per il training
 [trainHAR,validateHAR]=extractFeaturesAndSplit('HAR',0.8);
 [trainLBP18,validateLBP18]=extractFeaturesAndSplit('LBP18',0.8);
+
+[trainLBP18e,validateLBP18e,testLBP18e]=ettExtractFeaturesAndSplit('LBP18');
+[trainHARe,validateHARe,testHARe]=ettExtractFeaturesAndSplit('HAR');
 %eseguo il predict tramite il modello 
 %essendo il dataset ancora di piccole dimensioni i risultati possono essere
 %falsati, aumentando il fold è possibile ottenere risultati più concreti
 %prima di eseguire questa porzione è necessario avere un modello già
 %allenato
-predictions = trainedModel.predictFcn(validateHAR);
-predictions1 = trainedModel1.predictFcn(validateHAR);
+predictions = trainedModel.predictFcn(validateLBP18);
+predictions1 = trainedModel1.predictFcn(validateLBP18);
 %calcolo l'accuratezza
-iscorrect=predictions1==validateHAR.labels;
+
+iscorrect=predictions1==validateLBP18.labels;
 iscorrect=iscorrect(:,1);
-sizeArray=size(validateHAR);
+sizeArray=size(trainLBP18);
 accuracy=sum(iscorrect)*100/sizeArray(1);
 
