@@ -31,11 +31,10 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 %falsati, aumentando il fold è possibile ottenere risultati più concreti
 %prima di eseguire questa porzione è necessario avere un modello già
 %allenato
-predictions = trainedModel.predictFcn(validateLBP18);
-predictions1 = trainedModel1.predictFcn(validateLBP18);
+predictions = trainedModel.predictFcn(validateHAR);
 %calcolo l'accuratezza
 
-iscorrect=predictions1==validateLBP18.labels;
+iscorrect=predictions==validateHAR.labels;
 iscorrect=iscorrect(:,1);
 sizeArray=size(trainLBP18);
 accuracy=sum(iscorrect)*100/sizeArray(1);
