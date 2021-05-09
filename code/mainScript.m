@@ -21,9 +21,9 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 
 
 %preparo il dataset per il training
-[trainHAR,validateHAR]=extractFeaturesAndSplit('HAR',0.8);
-[trainLBP18,validateLBP18]=extractFeaturesAndSplit('LBP18',0.8);
-
+%[trainHAR,validateHAR]=extractFeaturesAndSplit('HAR',0.8);
+%[trainLBP18,validateLBP18]=extractFeaturesAndSplit('LBP18',0.8);
+[trainLBP18e,validateLBP18e,testLBP18e]=concatenateFeatures();
 %[trainLBP18e,validateLBP18e,testLBP18e]=ettExtractFeaturesAndSplit('LBP18');
 %[trainHARe,validateHARe,testHARe]=ettExtractFeaturesAndSplit('HAR');
 %eseguo il predict tramite il modello 
@@ -31,11 +31,11 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 %falsati, aumentando il fold è possibile ottenere risultati più concreti
 %prima di eseguire questa porzione è necessario avere un modello già
 %allenato
-    %predictions = trainedModel.predictFcn(validateHAR);
+    predictions = trainedModel.predictFcn(testLBP18e);
 %calcolo l'accuratezza
 
-    %iscorrect=predictions==validateHAR.labels;
-    %iscorrect=iscorrect(:,1);
-    %sizeArray=size(trainLBP18);
-    %accuracy=sum(iscorrect)*100/sizeArray(1);
+    iscorrect=predictions==testLBP18e.labels;
+    iscorrect=iscorrect(:,1);
+    sizeArray=size(trainLBP18e);
+    accuracy=sum(iscorrect)*100/length(testLBP18e.labels);
 
