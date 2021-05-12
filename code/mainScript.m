@@ -18,7 +18,7 @@ descriptors_sets = {'HM',...
                     'HARri','LBP18'};    
                 
 
-features = featureExtraction(img, descriptor, color, graylevel, prepro);
+%features = featureExtraction(img, descriptor, color, graylevel, prepro);
 
 %Esempio di calcolo features per piu' immagini:
 %img = datastore(....) o funzioni simili
@@ -33,7 +33,12 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 %preparo il dataset per il training
 %[trainHAR,validateHAR]=extractFeaturesAndSplit('HAR',0.8);
 %[trainLBP18,validateLBP18]=extractFeaturesAndSplit('LBP18',0.8);
-[trainLBP18e,validateLBP18e,testLBP18e]=concatenateFeatures();
+
+[train,validate,test]=concatenateFeatures();
+save('savedTrainTable.mat','train');
+save('savedValidateTable.mat','validate');
+save('savedTestTable.mat','test');
+
 %[trainLBP18e,validateLBP18e,testLBP18e]=ettExtractFeaturesAndSplit('LBP18');
 %[trainHARe,validateHARe,testHARe]=ettExtractFeaturesAndSplit('HAR');
 %eseguo il predict tramite il modello 
@@ -41,11 +46,11 @@ features = featureExtraction(img, descriptor, color, graylevel, prepro);
 %falsati, aumentando il fold è possibile ottenere risultati più concreti
 %prima di eseguire questa porzione è necessario avere un modello già
 %allenato
-    predictions = trainedModel.predictFcn(testLBP18e);
+   % predictions = trainedModel.predictFcn(test);
 %calcolo l'accuratezza
 
-    iscorrect=predictions==testLBP18e.labels;
-    iscorrect=iscorrect(:,1);
-    sizeArray=size(trainLBP18e);
-    accuracy=sum(iscorrect)*100/length(testLBP18e.labels);
+    %iscorrect=predictions==test.labels;
+   % iscorrect=iscorrect(:,1);
+   % sizeArray=size(train);
+   % accuracy=sum(iscorrect)*100/length(test.labels);
 
