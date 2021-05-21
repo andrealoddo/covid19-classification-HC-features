@@ -1,9 +1,9 @@
 % Esempio di calcolo delle feature per una singola immagine
 addpath(genpath('featuresComputation'));
 addpath(genpath('HAR'));
-img = imread('../img.png');
+%img = imread('../img.png');
 
-descriptor = 'LBP18'; % 'HAR', o 'LBP18'
+%descriptor = 'LBP18'; % 'HAR', o 'LBP18'
 color = 'gray';
 graylevel = 256;
 prepro = 'none';
@@ -33,7 +33,6 @@ descriptors_sets = {'HM',...
 %preparo il dataset per il training
 %[trainHAR,validateHAR]=extractFeaturesAndSplit('HAR',0.8);
 %[trainLBP18,validateLBP18]=extractFeaturesAndSplit('LBP18',0.8);
-
 [train,validate,test]=concatenateFeatures();
 save('savedTrainTable.mat','train');
 save('savedValidateTable.mat','validate');
