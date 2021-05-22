@@ -1,5 +1,4 @@
 function oneF = featureExtraction(img, descriptor, color, graylevel, prepro)
-
 if nargin == 4
     prepro = 'map';
 elseif nargin == 3
@@ -106,7 +105,7 @@ if strcmp(color, 'gray')==1
         ord = str2double(C{2});
         if length(C) > 2
             if contains(C{3},'CM')
-                disp('CM')
+
                 if length(C) == 3
                     [GLCM, ~] = GLCoOcc(img,'graylevel',256);
                 else
@@ -116,13 +115,13 @@ if strcmp(color, 'gray')==1
                 oneF = [];
                 for i = 1:size(GLCM,3)
                     if contains(C{1},'GS')
-                        disp('Legendre Giuseppe Simpson CM')
+
                         oneF = [oneF;reshape(LMGS(GLCM(:,:,i),ord),[],1)];
                     elseif contains(C{1},'G')
-                        disp('Legendre Giuseppe CM')
+                        
                         oneF = [oneF;reshape(LMG(GLCM(:,:,i),ord),[],1)];
                     else
-                        disp('Legendre Classico CM')
+                       
                         oneF = [oneF;reshape(LM(GLCM(:,:,i),ord),[],1)];
                     end
                 end
@@ -133,13 +132,13 @@ if strcmp(color, 'gray')==1
                     [img,~]= im2lbp(img, 1, 8);
                 end
                 if contains(C{1},'GS')
-                    disp('Legendre Giuseppe Simpson LBP')
+                    
                     oneF = LMGS(img, ord)';
                 elseif contains(C{1},'G')
-                    disp('Legendre Giuseppe LBP')
+                    
                     oneF = LMG(img, ord)';
                 else
-                    disp('Legendre Classico LBP')
+                    
                     oneF = reshape(LM(img, ord), [], 1);
                 end
             else
@@ -147,13 +146,10 @@ if strcmp(color, 'gray')==1
             end
         else
             if contains(C{1},'GS')
-                disp('Legendre Giuseppe Simpson')
                 oneF = LMGS(img, ord)'; 
             elseif contains(C{1},'G')
-                disp('Legendre Giuseppe')
                 oneF = LMG(img, ord)';
             else
-                disp('Legendre Classico')
                 oneF = reshape(LM(img, ord), [], 1);
             end
         end
@@ -170,10 +166,8 @@ if strcmp(color, 'gray')==1
                 oneF = [];
                 for i = 1:size(GLCM,3)
                     if contains(C{1},'due')
-                        disp('Chebychev due CM')
                         oneF = [oneF;reshape(CHdue(GLCM(:,:,i),ord),[],1)];
                     else
-                        disp('Chebychev CM')
                         oneF = [oneF;reshape(CH(GLCM(:,:,i),ord),[],1)];
                     end
                 end
@@ -182,10 +176,8 @@ if strcmp(color, 'gray')==1
             end
         else
             if contains(C{1},'due')
-                disp('Chebychev due')
                 oneF = reshape(CHdue(img, ord), [], 1);
             else
-                disp('Chebychev')
                 oneF = reshape(CH(img, ord), [], 1);
             end
         end
@@ -207,7 +199,7 @@ if strcmp(color, 'gray')==1
             oneF = reshape(TSM(img), [], 1);
         end      
     elseif contains(descriptor,'CLBP') %%%Local Binary Pattern    
-        disp("CLBP")
+
         N = cell2mat(regexp(descriptor,'\d*','Match'));
         if numel(N)==2
             ord = str2num(N(1));
@@ -376,9 +368,8 @@ function featureMatrix = HM(img)
 featureMatrix = Hu_Moments(img);
 
 %--------------------------------------------------------------------------
-function featureMatrix = ZM(img,ord, rep)
-
-featureMatrix = Zernike_Moments(img,ord, rep);
+function featureMatrix = ZM(img,ord, rep)  
+featureMatrix = Zernike_Moments_mex(img,ord, rep);
 
 %--------------------------------------------------------------------------
 function featureMatrix = LM(img, ord)

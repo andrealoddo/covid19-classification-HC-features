@@ -24,15 +24,25 @@ if size(f,3)==3
     f = rgb2gray(f); 
 end
 
+dim=0;
+for i=0:ord
+    for j=0:repet
+        if i>=j && mod((i+j),2)==0
+            dim=dim+1;
+        end
+    end
+end
 f = double(f);
-zernike_mom = [];
-
+zernike_mom = zeros(1, dim);
+index=1;
 for i=0:ord
     for j=0:repet
         if i>=j && mod((i+j),2)==0
             % Computation of Zernike moment with order i and repetition j 
-            [~, AOH, ~] = Zernikmoment_MN(f,i,j); 
-            zernike_mom = [zernike_mom AOH];
+            [~, AOH, ~] = Zernikmoment_MN(f,i,j);
+            
+            zernike_mom(index) = AOH;
+            index=index+1;
         end
     end
 end    
