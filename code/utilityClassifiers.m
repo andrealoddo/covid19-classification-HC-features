@@ -20,9 +20,52 @@ else
         out=getAllAccuracy();
         out=getTop(out,'descend');
     end
+    if thing=="vote"
+        [votes,accuracy,usedClassifiers]=getBestVotes();
+        out=accuracy;
+    end
 end
 end
-
+%generazione classificatore tramite votazione votazione
+function out=combineClassifiers(arrayClassifiersNames)
+    array={};
+    for i=1:length(arrayClassifiersNames)
+        load( arrayClassifiersNames(i,1));
+        array=vertcat(array,classifier);
+        
+            %manda fuori errore
+        
+    end
+    out=array;
+end
+function [votes,accuracy,usedClassifiers]=evalVotes(arrayClassifiers)
+    arrayPredictions=[];
+    for i=1:length(arrayClassifiers)
+        fprintf('%s%d\n', "Computo per elemnto_ ",i);
+            load(strcat("D:\Tesi\FeaturesSingleCpu\test\",arrayClassifiers{i,1}.usedFeature,"_test_table"));
+            fprintf('%s%s\n', "Caricato:  ",strcat("D:\Tesi\FeaturesSingleCpu\test\",arrayClassifiers{i,1}.usedFeature,"_test_table"));
+            arrayPredictions=horzcat(arrayPredictions,arrayClassifiers{i}.predictFcn(testingTable));
+            fprintf('%s\n', "Messo nell'array ");
+            trueLabels=testingTable.labels;
+        
+    end
+     fprintf('%s\n', "Predizioni");
+    disp(arrayPredictions);
+    votes=mode(arrayPredictions,2);
+    %uso una a caso tanto le labels son tutte uguali
+    accuracy=0.;
+    for i=1:length(votes)
+        if(trueLabels(i,1)==votes(i,1))
+             accuracy=accuracy+1;
+        end
+    end
+    accuracy=accuracy/length(votes);   
+    usedClassifiers=arrayClassifiers;
+end
+function [votes,accuracy,usedClassifiers]=getBestVotes()
+    [votes,accuracy,usedClassifiers]=evalVotes(combineClassifiers(getTop(getAllAccuracy(),'descend',2)));
+end
+%generazione info dei classificatori 
 function out=getAllTimes()
     descriptors_sets = {'HM',...
                     'ZM_4_2','ZM_4_4','ZM_5_3','ZM_5_5','ZM_6_2','ZM_6_4','ZM_6_6','ZM_7_3','ZM_7_5','ZM_7_7','ZM_7_8','ZM_7_9','ZM_8_2','ZM_8_4','ZM_8_6','ZM_8_8','ZM_9_3','ZM_9_5','ZM_9_7','ZM_9_9','ZM_9_11','ZM_10_2','ZM_10_4','ZM_10_6',...
@@ -85,7 +128,13 @@ end
 function out=getTop(in,mode,n)
     valuesIn=in(:,2);
     namesIn=in(:,1);
-    [valuesIn,isort]=sort(valuesIn,mode);
+    if mode=="ascend"
+        [valuesIn,isort]=sort(valuesIn);
+         fprintf('%s\n', "ascend ");
+    else
+        [valuesIn,isort]=sort(valuesIn,mode);
+         fprintf('%s\n', "desc ");
+    end
     namesIn=namesIn(isort);
     out=horzcat(namesIn,valuesIn);
     if nargin==3
