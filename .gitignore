@@ -1,6 +1,7 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/matlab
-# Edit at https://www.toptal.com/developers/gitignore?templates=matlab
+# Folders & files
+code/nohup
+code/commands.txt
 
 ### MATLAB ###
 # Windows default autosave extension
