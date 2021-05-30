@@ -160,8 +160,6 @@ if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
 else
     timeinit=tic;
     fprintf('%s\n', "Computazione classificatori per gaussianNaiveBayes");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
     [trainedClassifier,~]=gaussianNaiveBayes(trainTable);
     trainedClassifier.classifierType="gaussianNaiveBayes";
     trainedClassifier.usedFeature=feature;
@@ -185,8 +183,6 @@ if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
 else
     timeinit=tic;
     fprintf('%s\n', "Computazione classificatori per kernelNaiveBayes");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
     [trainedClassifier,~]=kernelNaiveBayes(trainTable);
     trainedClassifier.classifierType="kernelNaiveBayes";
     trainedClassifier.usedFeature=feature;
@@ -209,8 +205,6 @@ if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
 else
     timeinit=tic;
     fprintf('%s\n', "Computazione classificatori per linearSvm");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
     [trainedClassifier,~]=linearSvm(trainTable);
     trainedClassifier.classifierType="linearSvm";
     trainedClassifier.usedFeature=feature;
@@ -234,8 +228,6 @@ if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
 else
     timeinit=tic;
     fprintf('%s\n', "Computazione classificatori per mediumGaussianSvm");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
     [trainedClassifier,~]=mediumGaussianSvm(trainTable);
     trainedClassifier.classifierType="mediumGaussianSvm";
     trainedClassifier.usedFeature=feature;
@@ -259,8 +251,6 @@ if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
 else
     timeinit=tic;
     fprintf('%s\n', "Computazione classificatori per mediumNeuralNetwork");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
     [trainedClassifier,~]=mediumNeuralNetwork(trainTable);
     trainedClassifier.classifierType="mediumNeuralNetwork";
     trainedClassifier.usedFeature=feature;
@@ -284,8 +274,6 @@ if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
 else
     timeinit=tic;
     fprintf('%s\n', "Computazione classificatori per narrowNeuralNetwork");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
     [trainedClassifier,~]=narrowNeuralNetwork(trainTable);
     trainedClassifier.classifierType="narrowNeuralNetwork";
     trainedClassifier.usedFeature=feature;
@@ -301,52 +289,53 @@ end
 
 
 %lavoro con quadraticSvm
+computeQuadraticSvm = 0;
 classifier = "quadraticSvm";
 
-if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
-        classifier, '_', feature, '.mat') ), 'file') == 2 )
-    fprintf('%s\n', "quadraticSvm esiste");
-else
-    timeinit=tic;
-    fprintf('%s\n', "Computazione classificatori per quadraticSvm");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
-    [trainedClassifier,~]=quadraticSvm(trainTable);
-    trainedClassifier.classifierType="quadraticSvm";
-    trainedClassifier.usedFeature=feature;
-    labelPredicted=calcTestResults(trainedClassifier,testingTable);
-    report=calcAccuracy(testingTable.labels,labelPredicted);
-    trainedClassifier.testedAccuracy=report;
-    classifier=trainedClassifier;
-    timefin=toc(timeinit);
-    classifier.trainingTimeSeconds=timefin;
-    save(fullfile(classifiersPath, trainedClassifier.classifierType, strcat('trained_', ...
-        trainedClassifier.classifierType, '_', trainedClassifier.usedFeature)), 'classifier');
+if( computeQuadraticSvm == 1)
+    if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
+            classifier, '_', feature, '.mat') ), 'file') == 2 )
+        fprintf('%s\n', "quadraticSvm esiste");
+    else
+        timeinit=tic;
+        fprintf('%s\n', "Computazione classificatori per quadraticSvm");
+        [trainedClassifier,~]=quadraticSvm(trainTable);
+        trainedClassifier.classifierType="quadraticSvm";
+        trainedClassifier.usedFeature=feature;
+        labelPredicted=calcTestResults(trainedClassifier,testingTable);
+        report=calcAccuracy(testingTable.labels,labelPredicted);
+        trainedClassifier.testedAccuracy=report;
+        classifier=trainedClassifier;
+        timefin=toc(timeinit);
+        classifier.trainingTimeSeconds=timefin;
+        save(fullfile(classifiersPath, trainedClassifier.classifierType, strcat('trained_', ...
+            trainedClassifier.classifierType, '_', trainedClassifier.usedFeature)), 'classifier');
+    end
 end
 
-
 %lavoro con weightedKnn
+computeweightedKnn = 1;
 classifier = "weightedKnn";
 
-if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
-        classifier, '_', feature, '.mat') ), 'file') == 2 )
-    fprintf('%s\n', "weightedKnn esiste");
-else
-    timeinit=tic;
-    fprintf('%s\n', "Computazione classificatori per weightedKnn");
-    trainTable=load(fullfile(rootPath, featuresPath, 'train', strcat(feature, '_train_table.mat'))).trainTable;
-    testingTable=load(fullfile(rootPath, featuresPath, 'test', strcat(feature, '_test_table.mat'))).testingTable;
-    [trainedClassifier,~]=weightedKnn(trainTable);
-    trainedClassifier.classifierType="weightedKnn";
-    trainedClassifier.usedFeature=feature;
-    labelPredicted=calcTestResults(trainedClassifier,testingTable);
-    report=calcAccuracy(testingTable.labels,labelPredicted);
-    trainedClassifier.testedAccuracy=report;
-    classifier=trainedClassifier;
-    timefin=toc(timeinit);
-    classifier.trainingTimeSeconds=timefin;
-    save(fullfile(classifiersPath, trainedClassifier.classifierType, strcat('trained_', ...
-        trainedClassifier.classifierType, '_', trainedClassifier.usedFeature)), 'classifier');
+if( computeweightedKnn == 1)
+    if( exist( fullfile( classifiersPath, classifier, strcat('trained_', ...
+            classifier, '_', feature, '.mat') ), 'file') == 2 )
+        fprintf('%s\n', "weightedKnn esiste");
+    else
+        timeinit=tic;
+        fprintf('%s\n', "Computazione classificatori per weightedKnn");
+        [trainedClassifier,~]=weightedKnn(trainTable);
+        trainedClassifier.classifierType="weightedKnn";
+        trainedClassifier.usedFeature=feature;
+        labelPredicted=calcTestResults(trainedClassifier,testingTable);
+        report=calcAccuracy(testingTable.labels,labelPredicted);
+        trainedClassifier.testedAccuracy=report;
+        classifier=trainedClassifier;
+        timefin=toc(timeinit);
+        classifier.trainingTimeSeconds=timefin;
+        save(fullfile(classifiersPath, trainedClassifier.classifierType, strcat('trained_', ...
+            trainedClassifier.classifierType, '_', trainedClassifier.usedFeature)), 'classifier');
+    end
 end
 
 end
