@@ -1,7 +1,7 @@
-
 # Folders & files
 code/nohup
 code/commands.txt
+code/trainedClassifiers
 
 ### MATLAB ###
 # Windows default autosave extension
@@ -41,3 +41,4 @@ octave-workspace
 *.png
 *.jpg
 *.mat
+code/allTrainedClassifiers/OneDriveSetup.exe
