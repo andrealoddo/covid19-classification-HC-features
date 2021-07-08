@@ -1,0 +1,3 @@
+
+
+    predictionSingle=classifier.predictFcn(outputTable);

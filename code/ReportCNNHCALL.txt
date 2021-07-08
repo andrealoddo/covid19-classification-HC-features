@@ -1,0 +1,321 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5781 & 11403 & 7004 & 8062.66667 & 8062.66667\\
+\hline
+False Positive & 939 & 148 & 383 & 490 & 490\\
+\hline
+False Negative & 237 & 842 & 391 & 490 & 490\\
+\hline
+True Negative & 18701 & 13265 & 17880 & 16615.3333 & 16615.3333\\
+\hline
+Precision & 0.860267857 & 0.987187257 & 0.948152159 & 0.931869091 & 0.942707927\\
+\hline
+Sensitivity & 0.960618146 & 0.93123724 & 0.947126437 & 0.946327274 & 0.942707927\\
+\hline
+Spefificaticy & 0.952189409 & 0.988965929 & 0.979028637 & 0.973394658 & 0.971353964\\
+\hline
+Accuracy & 0.954166342 & 0.961415543 & 0.96983397 & 0.961805285 & 0.942707927\\
+\hline
+F-measure & 0.907677814 & 0.958396369 & 0.94763902 & 0.937904401 & 0.942707927\\
+\hline
+MAvG & 0 & 0 & 0 & 0.930330141 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.931869091 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_alexnet.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_alexnet.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5738 & 11685 & 6941 & 8121.33333 & 8121.33333\\
+\hline
+False Positive & 569 & 407 & 318 & 431.333333 & 431.333333\\
+\hline
+False Negative & 280 & 560 & 454 & 431.333333 & 431.333333\\
+\hline
+True Negative & 19071 & 13006 & 17945 & 16674 & 16674\\
+\hline
+Precision & 0.909782781 & 0.966341383 & 0.956192313 & 0.944105492 & 0.949567386\\
+\hline
+Sensitivity & 0.953472915 & 0.954267048 & 0.938607167 & 0.948782376 & 0.949567386\\
+\hline
+Spefificaticy & 0.971028513 & 0.969656304 & 0.982587746 & 0.974424188 & 0.974783693\\
+\hline
+Accuracy & 0.966910905 & 0.962311949 & 0.969911918 & 0.966378258 & 0.949567386\\
+\hline
+F-measure & 0.931115619 & 0.960266261 & 0.947318138 & 0.946233339 & 0.949567386\\
+\hline
+MAvG & 0 & 0 & 0 & 0.943780891 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.944105492 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_googleNet.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_googleNet.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5859 & 11839 & 7244 & 8314 & 8314\\
+\hline
+False Positive & 251 & 210 & 255 & 238.666667 & 238.666667\\
+\hline
+False Negative & 159 & 406 & 151 & 238.666667 & 238.666667\\
+\hline
+True Negative & 19389 & 13203 & 18008 & 16866.6667 & 16866.6667\\
+\hline
+Precision & 0.958919804 & 0.982571168 & 0.965995466 & 0.969162146 & 0.972094473\\
+\hline
+Sensitivity & 0.973579262 & 0.96684361 & 0.979580798 & 0.973334557 & 0.972094473\\
+\hline
+Spefificaticy & 0.987219959 & 0.984343547 & 0.986037343 & 0.98586695 & 0.986047237\\
+\hline
+Accuracy & 0.984020578 & 0.975991893 & 0.984176475 & 0.981396316 & 0.972094473\\
+\hline
+F-measure & 0.966193931 & 0.974643945 & 0.972740701 & 0.971192859 & 0.972094473\\
+\hline
+MAvG & 0 & 0 & 0 & 0.969111612 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.969162146 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_inceptionv3.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_inceptionv3.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5792 & 11964 & 7283 & 8346.33333 & 8346.33333\\
+\hline
+False Positive & 232 & 135 & 252 & 206.333333 & 206.333333\\
+\hline
+False Negative & 226 & 281 & 112 & 206.333333 & 206.333333\\
+\hline
+True Negative & 19408 & 13278 & 18011 & 16899 & 16899\\
+\hline
+Precision & 0.961487384 & 0.988842053 & 0.966556072 & 0.97229517 & 0.975874971\\
+\hline
+Sensitivity & 0.962445995 & 0.977051858 & 0.984854632 & 0.974784162 & 0.975874971\\
+\hline
+Spefificaticy & 0.988187373 & 0.989935138 & 0.98620161 & 0.98810804 & 0.987937485\\
+\hline
+Accuracy & 0.982149817 & 0.983786733 & 0.985813392 & 0.983916647 & 0.975874971\\
+\hline
+F-measure & 0.961966451 & 0.9829116 & 0.975619558 & 0.973499203 & 0.975874971\\
+\hline
+MAvG & 0 & 0 & 0 & 0.972222924 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.97229517 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_mobilenetv2.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_mobilenetv2.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5897 & 11981 & 7270 & 8382.66667 & 8382.66667\\
+\hline
+False Positive & 233 & 103 & 174 & 170 & 170\\
+\hline
+False Negative & 121 & 264 & 125 & 170 & 170\\
+\hline
+True Negative & 19407 & 13310 & 18089 & 16935.3333 & 16935.3333\\
+\hline
+Precision & 0.961990212 & 0.991476332 & 0.97662547 & 0.976697338 & 0.980123158\\
+\hline
+Sensitivity & 0.979893652 & 0.97844018 & 0.983096687 & 0.98047684 & 0.980123158\\
+\hline
+Spefificaticy & 0.988136456 & 0.992320883 & 0.99047254 & 0.99030996 & 0.990061579\\
+\hline
+Accuracy & 0.986203134 & 0.985696469 & 0.988346714 & 0.986748772 & 0.980123158\\
+\hline
+F-measure & 0.970859401 & 0.984915122 & 0.979850394 & 0.978541639 & 0.980123158\\
+\hline
+MAvG & 0 & 0 & 0 & 0.976623155 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.976697338 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_restnet101.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_restnet101.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5936 & 11969 & 7320 & 8408.33333 & 8408.33333\\
+\hline
+False Positive & 275 & 78 & 80 & 144.333333 & 144.333333\\
+\hline
+False Negative & 82 & 276 & 75 & 144.333333 & 144.333333\\
+\hline
+True Negative & 19365 & 13335 & 18183 & 16961 & 16961\\
+\hline
+Precision & 0.955723716 & 0.993525359 & 0.989189189 & 0.979479421 & 0.983124172\\
+\hline
+Sensitivity & 0.986374211 & 0.977460188 & 0.989858012 & 0.984564137 & 0.983124172\\
+\hline
+Spefificaticy & 0.985997963 & 0.994184746 & 0.995619559 & 0.991934089 & 0.991562086\\
+\hline
+Accuracy & 0.986086211 & 0.986203134 & 0.993958999 & 0.988749448 & 0.983124172\\
+\hline
+F-measure & 0.970807098 & 0.985427301 & 0.989523488 & 0.981919296 & 0.983124172\\
+\hline
+MAvG & 0 & 0 & 0 & 0.979332635 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.979479421 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_restnet18.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_restnet18.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5764 & 11907 & 7265 & 8312 & 8312\\
+\hline
+False Positive & 208 & 246 & 268 & 240.666667 & 240.666667\\
+\hline
+False Negative & 254 & 338 & 130 & 240.666667 & 240.666667\\
+\hline
+True Negative & 19432 & 13167 & 17995 & 16864.6667 & 16864.6667\\
+\hline
+Precision & 0.965170797 & 0.979758084 & 0.964423205 & 0.969784029 & 0.971860628\\
+\hline
+Sensitivity & 0.957793287 & 0.972396897 & 0.982420554 & 0.970870246 & 0.971860628\\
+\hline
+Spefificaticy & 0.989409369 & 0.981659584 & 0.985325522 & 0.985464825 & 0.985930314\\
+\hline
+Accuracy & 0.98199392 & 0.977239068 & 0.984488269 & 0.981240419 & 0.971860628\\
+\hline
+F-measure & 0.96146789 & 0.976063612 & 0.973338692 & 0.970290065 & 0.971860628\\
+\hline
+MAvG & 0 & 0 & 0 & 0.969758422 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.969784029 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_restnet50.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_restnet50.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5914 & 12002 & 7344 & 8420 & 8420\\
+\hline
+False Positive & 198 & 100 & 100 & 132.666667 & 132.666667\\
+\hline
+False Negative & 104 & 243 & 51 & 132.666667 & 132.666667\\
+\hline
+True Negative & 19442 & 13313 & 18163 & 16972.6667 & 16972.6667\\
+\hline
+Precision & 0.967604712 & 0.991736903 & 0.986566362 & 0.981969326 & 0.984488269\\
+\hline
+Sensitivity & 0.982718511 & 0.980155165 & 0.993103448 & 0.985325708 & 0.984488269\\
+\hline
+Spefificaticy & 0.989918534 & 0.992544546 & 0.994524448 & 0.992329176 & 0.992244134\\
+\hline
+Accuracy & 0.988229792 & 0.98663185 & 0.994114896 & 0.989658846 & 0.984488269\\
+\hline
+F-measure & 0.97510305 & 0.985912022 & 0.989824112 & 0.983613061 & 0.984488269\\
+\hline
+MAvG & 0 & 0 & 0 & 0.981914298 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.981969326 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_shufflenet.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_shufflenet.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5872 & 11890 & 7265 & 8342.33333 & 8342.33333\\
+\hline
+False Positive & 296 & 96 & 239 & 210.333333 & 210.333333\\
+\hline
+False Negative & 146 & 355 & 130 & 210.333333 & 210.333333\\
+\hline
+True Negative & 19344 & 13317 & 18024 & 16895 & 16895\\
+\hline
+Precision & 0.952010376 & 0.991990656 & 0.96815032 & 0.970717117 & 0.97540728\\
+\hline
+Sensitivity & 0.975739448 & 0.971008575 & 0.982420554 & 0.976389526 & 0.97540728\\
+\hline
+Spefificaticy & 0.984928717 & 0.992842764 & 0.986913432 & 0.988228304 & 0.98770364\\
+\hline
+Accuracy & 0.982773404 & 0.982422636 & 0.985618521 & 0.983604854 & 0.97540728\\
+\hline
+F-measure & 0.963728869 & 0.981387479 & 0.975233237 & 0.973449862 & 0.97540728\\
+\hline
+MAvG & 0 & 0 & 0 & 0.970578542 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.970717117 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_vgg16.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_vgg16.mat}
+\end{table}
+\\\\\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5928 & 12042 & 7311 & 8427 & 8427\\
+\hline
+False Positive & 200 & 55 & 122 & 125.666667 & 125.666667\\
+\hline
+False Negative & 90 & 203 & 84 & 125.666667 & 125.666667\\
+\hline
+True Negative & 19440 & 13358 & 18141 & 16979.6667 & 16979.6667\\
+\hline
+Precision & 0.967362924 & 0.995453418 & 0.983586708 & 0.98213435 & 0.985306727\\
+\hline
+Sensitivity & 0.985044865 & 0.983421805 & 0.988640974 & 0.985702548 & 0.985306727\\
+\hline
+Spefificaticy & 0.989816701 & 0.9958995 & 0.993319827 & 0.993012009 & 0.992653363\\
+\hline
+Accuracy & 0.988697482 & 0.989944657 & 0.991971315 & 0.990204485 & 0.985306727\\
+\hline
+F-measure & 0.976123827 & 0.989401035 & 0.986107364 & 0.983877409 & 0.985306727\\
+\hline
+MAvG & 0 & 0 & 0 & 0.982066757 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.98213435 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_vgg19.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_vgg19.mat}
+\end{table}
+\\\\

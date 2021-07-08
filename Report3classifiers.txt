@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5940 & 12037 & 7304 & 8427 & 8427\\
+\hline
+False Positive & 213 & 64 & 100 & 125.666667 & 125.666667\\
+\hline
+False Negative & 78 & 208 & 91 & 125.666667 & 125.666667\\
+\hline
+True Negative & 19427 & 13349 & 18163 & 16979.6667 & 16979.6667\\
+\hline
+Precision & 0.96538274 & 0.994711181 & 0.986493787 & 0.982195903 & 0.985306727\\
+\hline
+Sensitivity & 0.987038883 & 0.983013475 & 0.987694388 & 0.985915582 & 0.985306727\\
+\hline
+Spefificaticy & 0.989154786 & 0.99522851 & 0.994524448 & 0.992969248 & 0.992653363\\
+\hline
+Accuracy & 0.988658508 & 0.989399018 & 0.992555928 & 0.990204485 & 0.985306727\\
+\hline
+F-measure & 0.976090707 & 0.988827734 & 0.987093723 & 0.984004054 & 0.985306727\\
+\hline
+MAvG & 0 & 0 & 0 & 0.982117903 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.982195903 & 0\\
+\hline
+\end{tabular}
+\caption{3class}
+\label{tab:}
+\end{table}
+\\\\

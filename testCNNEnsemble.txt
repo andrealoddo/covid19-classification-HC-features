@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5894 & 11996 & 7340 & 8410 & 8410\\
+\hline
+False Positive & 246 & 141 & 41 & 142.666667 & 142.666667\\
+\hline
+False Negative & 124 & 249 & 55 & 142.666667 & 142.666667\\
+\hline
+True Negative & 19394 & 13272 & 18222 & 16962.6667 & 16962.6667\\
+\hline
+Precision & 0.959934853 & 0.988382632 & 0.994445197 & 0.980920894 & 0.983319043\\
+\hline
+Sensitivity & 0.979395148 & 0.979665169 & 0.992562542 & 0.983874287 & 0.983319043\\
+\hline
+Spefificaticy & 0.987474542 & 0.98948781 & 0.997755024 & 0.991572459 & 0.991659521\\
+\hline
+Accuracy & 0.985579546 & 0.984800062 & 0.996258477 & 0.988879362 & 0.983319043\\
+\hline
+F-measure & 0.969567363 & 0.984004594 & 0.993502978 & 0.982358311 & 0.983319043\\
+\hline
+MAvG & 0 & 0 & 0 & 0.980804779 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.980920894 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBeggedTrees_ALL_Plus_vgg19.mat}
+\label{tab:trained_ensembleBeggedTrees_ALL_Plus_vgg19.mat}
+\end{table}
+\\\\

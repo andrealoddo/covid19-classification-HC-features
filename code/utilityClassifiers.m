@@ -63,7 +63,8 @@ function [votes,accuracy,usedClassifiers]=evalVotes(arrayClassifiers)
     usedClassifiers=arrayClassifiers;
 end
 function [votes,accuracy,usedClassifiers]=getBestVotes()
-    [votes,accuracy,usedClassifiers]=evalVotes(combineClassifiers(getTop(getAllAccuracy(),'descend',2)));
+    [votes,accuracy,usedClassifiers]=evalVotes(combineClassifiers(getTop(getAllAccuracy(),'descend',60)));
+    %[votes,accuracy,usedClassifiers]=evalVotes(combineClassifiers(getAllAccuracy()));
 end
 %generazione info dei classificatori 
 function out=getAllTimes()

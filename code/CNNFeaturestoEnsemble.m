@@ -1,0 +1,3 @@
+cnnExtractFeatures();
+cnnExtractFeaturesLast();
+cnnTrainEnsembles();

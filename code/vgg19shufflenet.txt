@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5930 & 12036 & 7314 & 8426.66667 & 8426.66667\\
+\hline
+False Positive & 204 & 60 & 114 & 126 & 126\\
+\hline
+False Negative & 88 & 209 & 81 & 126 & 126\\
+\hline
+True Negative & 19436 & 13353 & 18149 & 16979.3333 & 16979.3333\\
+\hline
+Precision & 0.966742745 & 0.995039683 & 0.984652666 & 0.982145031 & 0.985267753\\
+\hline
+Sensitivity & 0.985377202 & 0.982931809 & 0.989046653 & 0.985785221 & 0.985267753\\
+\hline
+Spefificaticy & 0.989613035 & 0.995526728 & 0.993757871 & 0.992965878 & 0.992633876\\
+\hline
+Accuracy & 0.988619534 & 0.98951594 & 0.992400031 & 0.990178502 & 0.985267753\\
+\hline
+F-measure & 0.975971034 & 0.988948687 & 0.986844768 & 0.983921496 & 0.985267753\\
+\hline
+MAvG & 0 & 0 & 0 & 0.982075314 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.982145031 & 0\\
+\hline
+\end{tabular}
+\caption{vgg19shufflenet}
+\label{tab:vgg19shufflenet}
+\end{table}
+\\\\

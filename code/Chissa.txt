@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5738 & 11685 & 6941 & 8121.33333 & 8121.33333\\
+\hline
+False Positive & 569 & 407 & 318 & 431.333333 & 431.333333\\
+\hline
+False Negative & 280 & 560 & 454 & 431.333333 & 431.333333\\
+\hline
+True Negative & 19071 & 13006 & 17945 & 16674 & 16674\\
+\hline
+Precision & 0.909782781 & 0.966341383 & 0.956192313 & 0.944105492 & 0.949567386\\
+\hline
+Sensitivity & 0.953472915 & 0.954267048 & 0.938607167 & 0.948782376 & 0.949567386\\
+\hline
+Spefificaticy & 0.971028513 & 0.969656304 & 0.982587746 & 0.974424188 & 0.974783693\\
+\hline
+Accuracy & 0.966910905 & 0.962311949 & 0.969911918 & 0.966378258 & 0.949567386\\
+\hline
+F-measure & 0.931115619 & 0.960266261 & 0.947318138 & 0.946233339 & 0.949567386\\
+\hline
+MAvG & 0 & 0 & 0 & 0.943780891 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.944105492 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_googleNet.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_googleNet.mat}
+\end{table}
+\\\\

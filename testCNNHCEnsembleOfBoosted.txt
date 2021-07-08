@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.9cm}||p{2cm}|p{2cm}|p{2cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+Nome & COVID-19 & Normale & Polmonite & Macro Avg & Micro Avg\\
+\hline
+True Positive & 5970 & 12090 & 7348 & 8469.33333 & 8469.33333\\
+\hline
+False Positive & 151 & 80 & 19 & 83.3333333 & 83.3333333\\
+\hline
+False Negative & 48 & 155 & 47 & 83.3333333 & 83.3333333\\
+\hline
+True Negative & 19489 & 13333 & 18244 & 17022 & 17022\\
+\hline
+Precision & 0.975330828 & 0.993426459 & 0.997420931 & 0.988726073 & 0.99025645\\
+\hline
+Sensitivity & 0.992023928 & 0.987341772 & 0.993644354 & 0.991003352 & 0.99025645\\
+\hline
+Spefificaticy & 0.992311609 & 0.994035637 & 0.998959645 & 0.995102297 & 0.995128225\\
+\hline
+Accuracy & 0.992244134 & 0.990841063 & 0.997427703 & 0.9935043 & 0.99025645\\
+\hline
+F-measure & 0.983606557 & 0.99037477 & 0.995529061 & 0.989836796 & 0.99025645\\
+\hline
+MAvG & 0 & 0 & 0 & 0.988679169 & 0\\
+\hline
+MAvA & 0 & 0 & 0 & 0.988726073 & 0\\
+\hline
+\end{tabular}
+\caption{trained_ensembleBoostedTrees_HC_vgg19.mat}
+\label{tab:trained_ensembleBoostedTrees_HC_vgg19.mat}
+\end{table}
+\\\\

@@ -7,6 +7,7 @@ inputTable = trainingData;
 feature_predictor_names=[];
 isCategoricalEdit=[];
 [~,dimy]=size(inputTable.features);
+dimy = gather(dimy);
 for index=1:dimy
     feature_predictor_names=[feature_predictor_names,strcat("features_",string(index))];
     isCategoricalEdit=[isCategoricalEdit,false];
